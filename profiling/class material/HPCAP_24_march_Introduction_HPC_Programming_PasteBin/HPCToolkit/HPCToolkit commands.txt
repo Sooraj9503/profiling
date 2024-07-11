@@ -1,0 +1,11 @@
+source /home/apps/spack/share/spack/setup-env.sh
+spack load hpctoolkit
+ 
+g++ -o <> <>
+
+hpcrun -e REALTIME -t ./matrix
+ulimit -s unlimited
+hpcrun -e REALTIME -t ./matrix
+hpcstruct hpctoolkit-matrix-measurements/
+hpcprof hpctoolkit-matrix-measurements/
+hpcviewer hpctoolkit-matrix-database/

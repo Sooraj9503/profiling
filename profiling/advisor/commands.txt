@@ -1,0 +1,39 @@
+Spack installation steps:
+git clone https://github.com/spack/spack.git
+cd spack
+source /home/cdacapps01/himanshu/spack/share/spack/setup-env.sh
+
+spack list | grep hpctoolkit
+
+spack find (installed packages list)
+
+spack info <package name>
+
+spack spec -I <package name> (Dependant packages which will be installed along it)
+
+spack install -v -j30 <package name> (v -> verbose, -j30 -> will be installed using 30 cores)
+
+spack find -d hpctoolkit (-d -> shows dependancies installed with package)
+
+advisor command:
+advisor --collect=offload --config=<target device> --project-dir=./<dir nameh> -- ./a.out
+
+advisor --collect=offload --config=gen11_icl --accuracy=high --project-dir=./abc -- ./a.out
+
+advisor --collect=offload --dry-run --config=gen11_icl --project-dir=./abc -- ./a.out 
+
+
+Module load advisor/2023.0.0
+advisor -h
+
+spack list | grep advisor
+spack info intel-oneapi-advisor
+spack install -v -j<no. of cores> <advisor name>
+
+
+
+
+While running code with profiling:
+module load advisor/latest  -> for shavak
+spack load intel-oneapi-advisor -> for local machine
+spack load intel-oneapi-advisor

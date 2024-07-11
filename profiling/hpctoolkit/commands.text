@@ -1,0 +1,21 @@
+hpcrun -e -t    (-e -> Performance metrics/events; -t -> Trace view)
+hpcstruct   (No. of lines, function, loops, iteration)
+hpcprof     (Combines above to info)
+hpcviewer   (Views database directory/report)
+
+EVENTS:
+REALTIME
+CPUTIME
+per::CACHE-MISSES
+MEMLEAK
+IO
+
+COMMANDS to RUN:
+source spack
+spack load hpctoolkit
+g++ file.c
+hpcrun -e REALTIME -t ./a.out
+ulimit -s unlimited
+hpcstruct hpctoolkit-matrix-measurements/
+hpcprof hpctoolkit-matrix-measurements/
+hpcviewer hpctoolkit-matrix-database/

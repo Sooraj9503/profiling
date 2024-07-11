@@ -1,0 +1,6 @@
+source ~/sooraj/spack/share/spack/./setup-env.sh
+source /opt/intel/oneapi/setvars.sh
+sudo sysctl -w kernel.yama.ptrace_scope=0
+vtune --collect=hotspot --result-dir=./report -- ./a.out
+cd report (got to the report directory)
+vtune-gui report.vtune (To view the report)
